@@ -39,7 +39,7 @@ If you're using Linux, you probably already know how to open your terminal. If y
 
 Use the terminal to complete the following steps. You may write down the commands you use as notes.
 
-1. Print your current directory:
+1. Print your current directory using the `pwd` (print working directory) command:
 
    ```bash
    pwd
@@ -47,32 +47,32 @@ Use the terminal to complete the following steps. You may write down the command
 
    This will probably return something like `/home/your_username` on Linux or Mac, or `C:\Users\your_username` on Windows.
 
-2. List all files and directories in your current directory:
+2. List all files and directories in your current directory using the `ls` (list) command:
 
    ```bash
    ls
    ```
 
-   > [!NOTE]
-   > You can pass in "flags", usually marked with a dash, e.g. `ls -l` for detailed information or `ls -a` to include hidden files. You can also combine flags, e.g. `ls -la` to show all files in detail.
+> [!NOTE]
+> You can pass in "flags", usually marked with a dash, e.g. `ls -l` for detailed information or `ls -a` to include hidden files. You can also combine flags, e.g. `ls -la` to show all files in detail.
 
-3. Change to your home directory:
+3. Change to your home directory using `cd` (change directory):
 
    ```bash
    cd ~
    ```
 
-   > [!IMPORTANT]
-   > The `~` symbol represents your home directory. You can also use `cd` without any arguments to go to your home directory.
+> [!IMPORTANT]
+> The `~` symbol represents your home directory. You can also use `cd` without any arguments to go to your home directory.
 
-4. Create a new directory called `cli_lab`:
+4. Create a new directory called `cli_lab` using `mkdir` (make directory):
 
    ```bash
     mkdir cli_lab
    ```
 
-   > [!NOTE]
-   > Feel free to to make whatever directory structure you want, especially if you want to store all your other school stuff here. It is your computer after all! For the sake of this lab, we will assume you are creating a directory called `cli_lab` in your home directory.
+> [!NOTE]
+> Feel free to to make whatever directory structure you want, especially if you want to store all your other school stuff here. It is your computer after all! For the sake of this lab, we will assume you are creating a directory called `cli_lab` in your home directory.
 
 5. Change into the `cli_lab` directory:
 
@@ -83,18 +83,10 @@ Use the terminal to complete the following steps. You may write down the command
 6. Create four new directories inside `cli_lab`: `projects`, `notes`, `scripts`, and `delete_later`:
 
    ```bash
-   mkdir projects notes scripts
+   mkdir projects notes scripts delete_later
    ```
 
-7. Create a new file called `README.md` in the `cli_lab` directory:
-
-   ```bash
-   touch README.md
-   ```
-
-   The `touch` command creates an empty file if it doesn't exist, or updates the timestamp of the file if it does.
-
-8. Create a file called `README.txt` that says “Welcome to my command line workspace!”:
+7. Create a file called `README.txt` that says “Welcome to my command line workspace!”:
 
    ```bash
    echo "Welcome to my command line workspace!" > README.txt
@@ -102,40 +94,42 @@ Use the terminal to complete the following steps. You may write down the command
 
    This takes advantage of the `echo` command, which prints text to the terminal, and the `>` operator, which redirects that output to a file.
 
-   > [!NOTE]
-   > You can try creating the file with `touch README.txt` first, then using a text editor like `nano` or `vim` to edit it.
+> [!NOTE]
+> You can try creating the file with `touch README.txt` first, then using a text editor like `nano` or `vim` to edit it.
 
-9. View the contents of `README.txt`:
+8. View the contents of `README.txt`:
 
    ```bash
    cat README.txt
    ```
 
-   The `cat` command displays the contents of a file in the terminal.
+   The `cat` command displays the contents of a file in the terminal. `cat` stands for concatenate, and can also be used for other things!
 
-10. Copy `README.txt` to `notes/README_copy.txt`:
+9. Copy `README.txt` to `notes/README_copy.txt`:
 
     ```bash
     cp README.txt notes/README_copy.txt
     ```
 
-    The `cp` command copies files or directories.
+    The `cp` (copy) command copies files or directories.
 
-11. Move `README.md` to `notes/README.md`:
+10. Move `README.txt` to `notes/README.txt`:
 
     ```bash
-    mv README.md notes/README.md
+    mv README.txt notes
     ```
 
-    The `mv` command moves files or directories. It can also be used to rename files.
+    The `mv` (move) command moves files or directories. It can also be used to rename files.
 
-12. Delete the `delete_later` directory:
+11. Delete the `delete_later` directory:
 
     ```bash
     rm -r delete_later
     ```
 
-    The `rm` command removes files or directories. The `-r` flag is used to remove directories and their contents recursively.
+    The `rm` (remove) command removes files or directories. The `-r` flag is used to remove directories and their contents recursively.
+
+Congratulations! You have just learned how to use the command line! Now for a little bit more...
 
 ---
 
@@ -181,7 +175,7 @@ In this part of the lab, you’ll create a simple command-line shortcut (called 
    gotowork
    ```
 
-Congratulations! You have created your first command-line alias and are on your way to being a fully-fledged developer!
+Congratulations! You have created your first command-line alias and are on your way to being a full-fledged developer!
 
 ---
 
@@ -190,29 +184,30 @@ Congratulations! You have created your first command-line alias and are on your 
 We hope that you have not been buried in all this new information, but this is especially important to learn as it is the language you need to effectively navigate your own computer.
 Here are some additional commands and concepts that will help you become more comfortable with the command line:
 
-1. `vim`: A powerful text editor that runs in the terminal. It has a steep learning curve but is very efficient once mastered.
+1. `man`: The command to pull up the "manual" for any command. Just run `man (your command)` to see what a command is and how to use it.
+2. `vim`: A powerful text editor that runs in the terminal. It has a steep learning curve but is very efficient once mastered.
    - To open a file: `vim filename`
    - To enter insert mode (to edit text): Press `i`
    - To return to command mode: Press `Esc`
    - To exit without saving: `:q!`
    - To save and exit: `:wq`
    - `vim` has as ton of features and shortcuts which are worth learning. You can find many tutorials online, such as [Vim Adventures](https://vim-adventures.com/) or [Open Vim](https://www.openvim.com/). Some computers may even have `vimtutor` installed, which is a built-in tutorial on the command line.
-2. `git`: A version control system that allows you to track changes in your files and collaborate with others. You will likely be learning about this in more detail later, but here are some basic commands to get you started:
+3. `git`: A version control system that allows you to track changes in your files and collaborate with others. You will likely be learning about this in more detail later, but here are some basic commands to get you started:
    - To initialize a new git repository: `git init`
    - To add files to the staging area: `git add filename`
    - To commit changes: `git commit -m "Your commit message"`
    - To view the status of your repository: `git status`
    - To view the commit history: `git log`
-3. `sudo`: A command that allows you to run commands with administrative privileges. It stands for "superuser do."
+4. `sudo`: A command that allows you to run commands with administrative privileges. It stands for "superuser do."
    - To run a command as an administrator: `sudo command`
    - You will be prompted to enter your password.
    - Be careful when using `sudo`, as it can modify system files and settings.
-4. If you are on a Linux distribution like Ubuntu, you will likely need `apt`: This is a package manager that allows you to install, update, and remove software packages.
+5. If you are on a Linux distribution like Ubuntu, you will likely need `apt`: This is a package manager that allows you to install, update, and remove software packages.
    - To update the package list: `sudo apt update`
    - To install a package: `sudo apt install package_name`
    - To remove a package: `sudo apt remove package_name`
    - Note: You may need to use `sudo` to run these commands with administrative privileges.
-5. `brew`: If you are on a Mac, you can use Homebrew, a package manager for macOS.
+6. `brew`: If you are on a Mac, you can use Homebrew, a package manager for macOS.
    - To install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
    - To install a package: `brew install package_name`
    - To update Homebrew: `brew update`
