@@ -1,4 +1,4 @@
-# Lab: Getting Comfortable with the Command Line
+# Lab 0: Getting Comfortable with the Command Line
 
 ## Overview
 
@@ -31,11 +31,13 @@ TLDR: Use the terminal if you want to be FAST.
 
 ## Part 1: Command-Line Scavenger Hunt
 
-Use the terminal to complete the following steps. You may write down the commands you use as notes.
-
 If you're using Windows, you can open the Command Prompt by searching for "cmd" or "Command Prompt" in the Start menu.
+
 If you're using Mac, you can open the terminal by searching for "Terminal" in Spotlight (Cmd + Space).
+
 If you're using Linux, you probably already know how to open your terminal. If you don't, a quick Google Search for "how to open terminal on [your Linux distro]" should help.
+
+Use the terminal to complete the following steps. You may write down the commands you use as notes.
 
 1. Print your current directory:
 
@@ -63,7 +65,7 @@ If you're using Linux, you probably already know how to open your terminal. If y
    > [!IMPORTANT]
    > The `~` symbol represents your home directory. You can also use `cd` without any arguments to go to your home directory.
 
-4. Create a new directory called `my_lab`:
+4. Create a new directory called `cli_lab`:
 
    ```bash
     mkdir cli_lab
@@ -78,7 +80,7 @@ If you're using Linux, you probably already know how to open your terminal. If y
    cd cli_lab
    ```
 
-6. Create three new directories inside `cli_lab`: `projects`, `notes`, and `scripts`:
+6. Create four new directories inside `cli_lab`: `projects`, `notes`, `scripts`, and `delete_later`:
 
    ```bash
    mkdir projects notes scripts
@@ -90,8 +92,7 @@ If you're using Linux, you probably already know how to open your terminal. If y
    touch README.md
    ```
 
-   > [!NOTE]
-   > The `touch` command creates an empty file if it doesn't exist, or updates the timestamp of the file if it does.
+   The `touch` command creates an empty file if it doesn't exist, or updates the timestamp of the file if it does.
 
 8. Create a file called `README.txt` that says “Welcome to my command line workspace!”:
 
@@ -120,11 +121,72 @@ If you're using Linux, you probably already know how to open your terminal. If y
 
     The `cp` command copies files or directories.
 
+11. Move `README.md` to `notes/README.md`:
+
+    ```bash
+    mv README.md notes/README.md
+    ```
+
+    The `mv` command moves files or directories. It can also be used to rename files.
+
+12. Delete the `delete_later` directory:
+
+    ```bash
+    rm -r delete_later
+    ```
+
+    The `rm` command removes files or directories. The `-r` flag is used to remove directories and their contents recursively.
+
+---
+
+## Part 2: Create a Shortcut with an Alias
+
+In this part of the lab, you’ll create a simple command-line shortcut (called an alias) to help you move into your workspace directory faster.
+
+1. Open your shell configuration file:
+
+   - If you're using `bash`, run:
+     ```bash
+     nano ~/.bashrc
+     ```
+   - If you're using `zsh`, run:
+     ```bash
+     nano ~/.zshrc
+     ```
+
+2. Scroll to the bottom and add this line:
+
+   ```bash
+   alias gotowork="cd ~/cli_lab"
+   ```
+
+3. Save the file and exit the editor:
+
+   - In `nano`, press `Ctrl + x`, then `y` to confirm saving, and `Enter` to exit.
+
+4. Apply the changes:
+
+   - If you're using `bash`, run:
+     ```bash
+     source ~/.bashrc
+     ```
+   - If you're using `zsh`, run:
+     ```bash
+     source ~/.zshrc
+     ```
+
+5. Now, you can use the shortcut `gotowork` to quickly navigate to your `cli_lab` directory. Use `cd` to navigate anywhere else, and then type the alias you created:
+
+   ```bash
+   gotowork
+   ```
+
+Congratulations! You have created your first command-line alias and are on your way to being a fully-fledged developer!
+
 ---
 
 ## Part 3: Going Beyond the Basics
 
-As you can see with all the notes, there are many ways to do the same thing in the command line.
 We hope that you have not been buried in all this new information, but this is especially important to learn as it is the language you need to effectively navigate your own computer.
 Here are some additional commands and concepts that will help you become more comfortable with the command line:
 
